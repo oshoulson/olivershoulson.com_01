@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap - Prebuilt Layout</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+	<style>
+body
+	  {
+	  background-image: url('images/Background Images/Midtown.jpg');
+	  background-size: cover;
+		}
+fancy-title{
+		  font-size: 5em;
+	    color: white;
+	   	font-family: 'Avenir';
+	    font-weight: 700;
+		position:relative; left:150px; top:2px;
+      text-shadow: 5px 5px 0px #3ab0c3, 
+                  -5px -5px 0px #ad07ab,
+		  		  7px 7px 4px black;
+}
+fancy-title:hover {
+				text-shadow: 
+				   5px 5px 0px #3ab0c3, 
+                  -5px -5px 0px #ad07ab,
+		  		  7px 7px 9px black,
+				  7px 7px 6px black;
+				cursor: pointer;}
+nav {
+  position: absolute;
+  top: 110px;
+  left: 150px;
+  width: 800px;
+  height: 41px;
+  background-color: white;
+  box-shadow: 4px 4px 4px gray;
+  border-radius: 8px;
+  animation: slide-in 1s ease-out;
+  text-align: center;
+}
+
+ul {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  margin-left: 25px;
+  padding: 0;
+  list-style-type: none;
+  margin-right: 50px;
+  }
+	
+ul li {
+    border: 2px solid transparent;
+    border-radius: 5px;
+	margin-left: 20px;
+	margin-top: 1px;
+    padding: 4px;
+	transition: background 0.2s}
+		
+li a {
+  height: 100%;
+  font-family: 'Avenir';
+  font-weight: 600;
+  font-size: 18px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #002752;
+  cursor: pointer;}
+		
+li a:hover{color:black; text-decoration:none;}
+		
+li ul {
+      opacity: 0;
+      position: absolute;
+      display: block;
+      margin: 12px -12px;
+      padding: 0px;
+      background: green;
+      border-radius: 5px;
+	  transition: opacity 0.2s;}
+li ul:hover{opacity: 1}
+		
+li ul li {
+        margin: -2px 0 0 -2px;
+        width: calc(100% - 20px);
+		line-height: 1.7;}ul li ul li a{
+	color: #2375D8}
+li ul li a {color:black;}
+li ul li a:hover {visibility: visible;
+        	opacity: 1;
+			  color: #F9F8FD;}
+
+ul .animation {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  transition: all .5s ease 0s;
+  border-radius: 8px;
+}
+/*li:nth-child(1):hover {background: #3ab0c3}*/
+/*li:nth-child(2):hover {background:#4f40db}*/
+/*li:nth-child(3):hover {background: #9840db}*/
+/*li:nth-child(4):hover {background: #c740db}*/
+/*li:nth-child(5):hover {background: #f25798}*/
+		
+li:nth-child(1) {
+  width: 180px;
+}
+li:nth-child(2) {
+  width: 180px;
+}
+li:nth-child(3) {
+  width: 135px;
+}
+li:nth-child(4) {
+  width: 160px;
+}
+li:nth-child(5) {
+  width: 160px;
+}
+		ul .start-home, li:nth-child(1):hover~.animation {
+  width: 180px;
+  left: 0;
+			background-color: #3ab0c3;}
+		ul .start-photo, li:nth-child(2):hover~.animation {
+  width: 180px;
+  left: 0;
+			background-color: #3ab0c3;}
+		ul .start-act, li:nth-child(3):hover~.animation {
+  width: 180px;
+  left: 0;
+			background-color: #3ab0c3;}
+		ul .start-ling, li:nth-child(4):hover~.animation {
+  width: 180px;
+  left: 0;
+			background-color: #3ab0c3;}
+		ul .start-about, li:nth-child(5):hover~.animation {
+  width: 180px;
+  left: 0;
+			background-color: #3ab0c3}
+	  </style>
+<style>
+	  </style>
+  </head>
+  <body>
+<fancy-title>Oliver Shoulson</fancy-title>
+	  <nav>
+  <ul>
+    <li><a href="#0">Art & Design</a></li>
+    <li><a href="#0">Photography</a></li>
+    <li>
+      <a href="#0">Acting</a>
+      <ul>
+        <li><a href="#0">Burger King</a></li>
+        <li><a href="#0">Burger King</a></li>
+        <li><a href="#0">Burger King</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#0">Linguistics</a>
+       <ul>
+        <li><a href="#0">Burger King</a></li>
+        <li><a href="#0">Burger King</a></li>
+        <li><a href="#0">Burger King</a></li>
+      </ul>
+    </li>
+    <li><a href="#0">About Me</a></li>
+	<div class="animation start-home"></div>
+  </ul>
+</nav>
+  </body>
+</html>
