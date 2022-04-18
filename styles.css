@@ -1,14 +1,14 @@
-
+/* Titles and Menu */
 h1 {
 	align-content: left;
 	position: relative;
 	z-index: 100;
 	color: white;
-	text-shadow: 
+	text-shadow:
 		2px 2px 4px #003644,
 		4px 4px 0px #00C4E7,
 		-4px -4px 0px #FD019F,
-		8px 8px 10px #003644;	
+		8px 8px 10px #003644;
 	font-family: "Avenir Next";
 	font-size: 4em;
 	margin: -.1em 0 0 0;
@@ -19,20 +19,14 @@ h1 {
 	gap: var(--gap, 1rem);
 	z-index: 1;
 }
-
 .logo {
 	margin: 2rem;
 }
-
 .primary-header {
 	align-items: center;
 	justify-content: left;
 }
-
 .mobile-nav-toggle { display: none;}
-
-
-
 .primary-navigation {
 	background: white;
 	z-index: 1000;
@@ -45,7 +39,7 @@ h1 {
 	margin: -.25em 0 0 0;
 	text-decoration: none;
 }
-
+.primary-navigation[data-visible="true"] {transform: translateX(0%)}
 .primary-navigation .primary-item {
 
 	font-family: 'Avenir Next Condensed';
@@ -53,29 +47,26 @@ h1 {
 	display: inline-block;
 	z-index: 110;
 	position: relative;
-	padding: .5em;	
+	padding: .5em;
 	text-decoration: none;
 	font-weight: 600;
 	text-transform: uppercase;
 }
-
 a:any-link {text-decoration: none; color: black;}
 a:local-link {text-decoration: none; color: black;}
 a:target-within {text-decoration: none; color: black;}
-
 .primary-navigation .about {
 	font-family: 'Avenir Next Condensed';
 	color: black;
 	display: inline-block;
 	z-index: 110;
 	position: relative;
-	padding: .5em;	
+	padding: .5em;
 	text-decoration: none;
 	font-weight: 600;
 	text-transform: uppercase;
 	cursor: pointer;
 }
-
 .sub-navigation {
 	border-radius: 0;
 	list-style: none;
@@ -92,21 +83,17 @@ a:target-within {text-decoration: none; color: black;}
 	opacity: 0;
 	line-height: 2em;
 }
-
 .sub-navigation li {
 	padding-left: 1em;
 	transition: all 500ms, ease 300ms;
-
 }
 .sub-navigation li:hover {
 	background: rgba(255, 255, 255, 0.75);
 	opacity: 1;}
-
 .sub-navigation li:active {
 	border-radius: 1em;
 	box-shadow: 1px 1px 4px gray;
 }
-
 .sub-navigation a {
 	font-family: 'Avenir Next Condensed';
 	color: black;
@@ -115,13 +102,10 @@ a:target-within {text-decoration: none; color: black;}
 	font-size: 1em;
 	font-weight: 500;
 }
-
 .sub-navigation a:hover {
 	color: #FD019F;
 }
-
 .primary-navigation > li:hover .sub-navigation{opacity:1;}
-
 
 ul .animation {
 	box-shadow: 2px 2px 6px gray;
@@ -132,9 +116,6 @@ ul .animation {
 	border-radius: 1em;
 	transition: all 500ms ease 200ms;
 }
-
-@media (max-width: 35em) {ul .animation {display: none}}
-
 
 li:nth-child(1) {
 	width: 3em;
@@ -186,72 +167,61 @@ ul .start-about, li:nth-child(6):hover~.animation {
 	background-color: #FD019F;
 }
 
-@media (max-width: 35em) 
+@media (max-width: 500px)
 {
-	body{
-		background: url("images/Background Images/MidtownCropped.jpg");
-		background-size: cover;
-		overflow-y: scroll;
-	}
 	h1{
 		font-size: 2.5em;
-		text-shadow: 
+		top: -0.33em;
+		text-shadow:
 		1px 1px 2px #003644,
 		2px 2px 0px #00C4E7,
 		-2px -2px 0px #FD019F,
-		4px 4px 6px #003644;	
+		4px 4px 6px #003644;
 	}
-	.primary-navigation
-	{ position: fixed;
-	inset: 0 0 0 30%;
-	z-index: 1000;
-	flex-direction: column;
-	transform: translateX(100%);
-	transition: transform 350ms ease-in; 
-	padding: min(30vh, 10rem) 2em;
-	background: hsla(189,100%,90%,0.55);
-	backdrop-filter: blur(1rem);
-	min-height: 100%;
-	line-height: .25em;}
-	
+	.primary-navigation {
+		position: fixed;
+		inset: 0 0 0 30%;
+		z-index: 1000;
+		flex-direction: column;
+		transform: translateX(100%);
+		transition: transform 350ms ease-in;
+		padding: min(30vh, 10rem) 2em;
+		background: hsla(189,100%,90%,0.55);
+		backdrop-filter: blur(1rem);
+		min-height: 100%;
+		line-height: .25em;
+	}
+	.mobile-nav-toggle {
+		display: block;
+		position: absolute;
+		width: 1.5rem;
+		height: 1.5rem;
+		top: 2rem;
+		right: 1rem;
+		z-index: 9999;
+		border: 0;
+		background-image: url("icons/Menu.svg");
+		background-repeat: no-repeat;
+		background-color: transparent;
+		cursor: pointer;
+	}
+	ul .animation {display: none}
+	.sub-navigation {display: none; min-width: 7em; padding-right: 2em;}
+	.sub-navigation li {min-width: 7em;}
+	.primary-navigation > li:hover .sub-navigation{display:block;}
+	}
 }
-
 .primary-navigation[data-visible="true"] {transform: translateX(0%)}
 
 
-@media (max-width: 35em) {
-.mobile-nav-toggle {
-	display: block;
-	position: absolute;
-	width: 1.5rem;
-	height: 1.5rem;
-	top: 1rem;
-	right: 1rem;
-	z-index: 9999;
-	border: 0;
-	background-image: url("icons/Menu.svg");
-	background-repeat: no-repeat;
-	background-color: transparent;
-	cursor: pointer;
-	}
- ul .animation {display: none}
-.sub-navigation {display: none; min-width: 7em; padding-right: 2em;}
-.sub-navigation li {min-width: 7em;}
-.primary-navigation > li:hover .sub-navigation{display:block;}
-}
 
-/*social bar*/
-
-
-
-
-/* Floating Social Media Bar Style Starts Here */
+/* SOCIAL BAR */
 
 .fl-fl {
   background: white;
   border-radius: 2em;
   text-transform: uppercase;
-  box-shadow: -2px 2px 6px #003644;	
+  box-shadow: -2px 2px 6px #003644;
   padding: 4px;
   width: 250px;
   position: fixed;
@@ -263,19 +233,15 @@ ul .start-about, li:nth-child(6):hover~.animation {
   -o-transition: all .25s ease;
   transition: all .25s ease;
 }
-
-
 .icon {
 	vertical-align: middle;
 	width: 2.5em;
-	line-height: 0em;	
+	line-height: 0em;
 	display: inline-flex;
 }
-
 .fl-fl:hover {
   right: 0;
 }
-
 .fl-fl a {
   font-family: 'Avenir Next Condensed';
   display: inline-flex;
@@ -284,30 +250,25 @@ ul .start-about, li:nth-child(6):hover~.animation {
   text-decoration: none;
   font-weight: 600;
 }
-
 .float-ig {
-  top: 160px;
+	top: 160px;
 	line-height: .75em;
-vertical-align: middle;}
-
-
+	vertical-align: middle;
+}
 .float-in {
-  top: 215px;
+	top: 215px;
 	line-height: .75em;
 }
-
 .float-em {
-  top: 270px;
+	top: 270px;
 	line-height: .75em;
 }
-
 .float-ph {
-  top: 325px;
+	top: 325px;
 	line-height: .75em;
 }
 
-/*about me*/
-
+/*ABOUT ME*/
 .about-me {
 	letter-spacing: -.25px;
 	position: relative;
@@ -341,114 +302,7 @@ vertical-align: middle;}
 	text-decoration: none;
 }
 
-@media (max-width: 35em) { .about-me {
+@media (max-width: 500px) { .about-me {
 	top: 20em;
-	}
-}
-
-.cv {
-	position: absolute;
-	display: flex;
-	margin: 5em;
-	top: 9em;
-	 width: 950px;
-	height: 1200px;
-}
-
-@media (max-width: 35em) {.cv {
-	margin: 0em;
-	max-width: 100%;
-	}}
-
-.videos {
-	display: grid;
-	grid-template-columns: 2fr 3fr;
-	position: relative;
-	width: 48em;
-	background-color: hsla(281,99%,74%,.5);
-	border-radius: 1em;
-	top: -65em;
-	left: 5em;
-	opacity: 0;
-	transition: ease-in;
-}
-
-.videos iframe {
-	margin: 2em;
-	display: grid;
-	max-width: 20em;
-}
-
-.middlemarch {
-	display: flex;
-	position: relative;
-	background: none;
-	width: 10em;
-	height: 10em;
-	backround: none;
-	margin: 6em;
-	border: none;
-	
-}
-
-.headshots {
-	text-align: center;
-	font-family: "Avenir Next Condensed";
-	text-transform: uppercase;
-	font-size: 1.5em;
-	font-weight: 700;
-	display: flex;
-	position: relative;
-	width: 5.2em;
-	left: 3.5em;
-	backround-color: white;
-	transition: all 200ms ease-in;
-	border-radius: 1em;
-	border: none;
-}
-
-.headshots:hover {
-	background-color: #00C4E7;
-}
-
-.middlemarch img {
-	width: 10em;
-	height:10em;
-	opacity: .9;
-	
-
-}
-
-.middlemarch img:hover {
-		opacity: 1;
-	cursor: pointer;
-}
-
-.videos[data-visible="true"] {opacity: 1;}
-
-@media (max-width: 35em) {.middlemarch {
-	left: -6em;
-	top: -5em;
-
-	}}
-
-@media (max-width: 35em) {.middlemarch img {
-	max-width: 4em;
-	max-height: 4em;
-
-	}}
-
-@media (max-width: 35em) {.videos {
-	display: inline-block;
-	max-width: 99%;
-	background-color: hsla(281,99%,74%,.5);
-	border-radius: 1em;
-	top: -70em;
-	left: 0em;
-	opacity: 0;
-	transition: ease-in;
-}
-	.main_vid {
-		display: none;
 	}
 }
