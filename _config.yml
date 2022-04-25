@@ -1,0 +1,6 @@
+name: Oliver's Personal Website
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag

@@ -1,0 +1,308 @@
+/* Titles and Menu */
+h1 {
+	align-content: left;
+	position: relative;
+	z-index: 100;
+	color: white;
+	text-shadow:
+		2px 2px 4px #003644,
+		4px 4px 0px #00C4E7,
+		-4px -4px 0px #FD019F,
+		8px 8px 10px #003644;
+	font-family: "Avenir Next";
+	font-size: 4em;
+	margin: -.1em 0 0 0;
+}
+
+.flex {
+	display: flex;
+	gap: var(--gap, 1rem);
+	z-index: 1;
+}
+.logo {
+	margin: 2rem;
+}
+.primary-header {
+	align-items: center;
+	justify-content: left;
+}
+.mobile-nav-toggle { display: none;}
+.primary-navigation {
+	background: white;
+	z-index: 1000;
+	width: 40em;
+	height: 2.40em;
+	box-shadow: 4px 4px 10px #003644;
+	border-radius: 1em;
+	list-style: none;
+	padding: 0;
+	margin: -.25em 0 0 0;
+	text-decoration: none;
+}
+.primary-navigation[data-visible="true"] {transform: translateX(0%)}
+.primary-navigation .primary-item {
+
+	font-family: 'Avenir Next Condensed';
+	color: black;
+	display: inline-block;
+	z-index: 110;
+	position: relative;
+	padding: .5em;
+	text-decoration: none;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+a:any-link {text-decoration: none; color: black;}
+a:local-link {text-decoration: none; color: black;}
+a:target-within {text-decoration: none; color: black;}
+.primary-navigation .about {
+	font-family: 'Avenir Next Condensed';
+	color: black;
+	display: inline-block;
+	z-index: 110;
+	position: relative;
+	padding: .5em;
+	text-decoration: none;
+	font-weight: 600;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.sub-navigation {
+	border-radius: 0;
+	list-style: none;
+	position: relative;
+	min-width: 5em;
+	top: 1em;
+	left: -.75em;
+	z-index: -1000;
+	display: inline-block;
+	background: rgba(255, 255, 255, 0.75);
+	box-shadow: 4px 4px 10px black;
+	padding: 1em;
+	transition: all 500ms, ease 300ms;
+	opacity: 0;
+	line-height: 2em;
+}
+.sub-navigation li {
+	padding-left: 1em;
+	transition: all 500ms, ease 300ms;
+}
+.sub-navigation li:hover {
+	background: rgba(255, 255, 255, 0.75);
+	opacity: 1;}
+.sub-navigation li:active {
+	border-radius: 1em;
+	box-shadow: 1px 1px 4px gray;
+}
+.sub-navigation a {
+	font-family: 'Avenir Next Condensed';
+	color: black;
+	text-transform: none;
+	text-decoration: none;
+	font-size: 1em;
+	font-weight: 500;
+}
+.sub-navigation a:hover {
+	color: #FD019F;
+}
+.primary-navigation > li:hover .sub-navigation{opacity:1;}
+
+ul .animation {
+	box-shadow: 2px 2px 6px gray;
+	position: absolute;
+	height: 6px;
+	z-index: 50;
+	padding: 1em;
+	border-radius: 1em;
+	transition: all 500ms ease 200ms;
+}
+
+li:nth-child(1) {
+	width: 3em;
+}
+li:nth-child(2) {
+	width: 6em;
+}
+li:nth-child(3) {
+	width: 6.5em;
+}
+li:nth-child(4) {
+	width: 3.5em;
+}
+li:nth-child(5) {
+	width: 5.5em;
+}
+li:nth-child(5) {
+	width: 5.5em;
+}
+
+ul .start-home, li:nth-child(1):hover~.animation {
+	width: 1.5em;
+	left:  2em;
+	background-color: #00C4E7;
+}
+ul .start-art, li:nth-child(2):hover~.animation {
+	width: 5.2em;
+	left: 6.5em;
+	background-color: #FFEB36;
+}
+ul .start-photo, li:nth-child(3):hover~.animation {
+	width: 6.5em;
+	left: 14em;
+	background-color: #FE824F;
+}
+ul .start-acting, li:nth-child(4):hover~.animation {
+	width: 2.75em;
+	left: 23em;
+	background-color: #D379FE;
+}
+ul .start-ling, li:nth-child(5):hover~.animation {
+	width: 4.75em;
+	left: 28.5em;
+	background-color: #BD8C6C;
+}
+ul .start-about, li:nth-child(6):hover~.animation {
+	width: 4.5em;
+	left: 35.5em;
+	background-color: #FD019F;
+}
+
+@media (max-width: 500px)
+{
+	h1{
+		font-size: 2.5em;
+		top: -0.33em;
+		text-shadow:
+		1px 1px 2px #003644,
+		2px 2px 0px #00C4E7,
+		-2px -2px 0px #FD019F,
+		4px 4px 6px #003644;
+	}
+	.primary-navigation {
+		position: fixed;
+		inset: 0 0 0 30%;
+		z-index: 1000;
+		flex-direction: column;
+		transform: translateX(100%);
+		transition: transform 350ms ease-in;
+		padding: min(30vh, 10rem) 2em;
+		background: hsla(189,100%,90%,0.55);
+		backdrop-filter: blur(1rem);
+		min-height: 100%;
+		line-height: .25em;
+	}
+	.mobile-nav-toggle {
+		display: block;
+		position: absolute;
+		width: 1.5rem;
+		height: 1.5rem;
+		top: 2rem;
+		right: 1rem;
+		z-index: 9999;
+		border: 0;
+		background-image: url("../icons/Menu.svg");
+		background-repeat: no-repeat;
+		background-color: transparent;
+		cursor: pointer;
+	}
+	ul .animation {display: none}
+	.sub-navigation {display: none; min-width: 7em; padding-right: 2em;}
+	.sub-navigation li {min-width: 7em;}
+	.primary-navigation > li:hover .sub-navigation{display:block;}
+	}
+}
+.primary-navigation[data-visible="true"] {transform: translateX(0%)}
+
+
+
+/* SOCIAL BAR */
+
+.fl-fl {
+  background: white;
+  border-radius: 2em;
+  text-transform: uppercase;
+  box-shadow: -2px 2px 6px #003644;
+  padding: 4px;
+  width: 250px;
+  position: fixed;
+  right: -210px;
+  z-index: 1000;
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+.icon {
+	vertical-align: middle;
+	width: 2.5em;
+	line-height: 0em;
+	display: inline-flex;
+}
+.fl-fl:hover {
+  right: 0;
+}
+.fl-fl a {
+  font-family: 'Avenir Next Condensed';
+  display: inline-flex;
+  font-size: 1em;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+.float-ig {
+	top: 160px;
+	line-height: .75em;
+	vertical-align: middle;
+}
+.float-in {
+	top: 215px;
+	line-height: .75em;
+}
+.float-em {
+	top: 270px;
+	line-height: .75em;
+}
+.float-ph {
+	top: 325px;
+	line-height: .75em;
+}
+
+/*ABOUT ME*/
+.about-me {
+	letter-spacing: -.25px;
+	position: relative;
+	left: .5em;
+	display: block;
+	background: rgba(255, 255, 255, 0.89);
+	font-family: 'Avenir Next';
+	font-size: .88em;
+	max-width: 40em;
+	color: #003644;
+	font-weight: 500;
+	border-radius: 1em;
+	padding: 2em;
+	box-shadow: 4px 4px 10px #003644;
+	transform: translateY(500em);
+	transition: all 600ms ease-in;
+	z-index: 8000;
+}
+.about-me[data-visible="true"] {transform: translateY(4em)}
+
+.about-me h2 {
+	margin: 10px;
+	display: flex;
+	color: #FD019F;
+	font-family: "Avenir Next Condensed";
+	font-size: 2em;
+	text-align: center;
+	text-justify: auto;
+	font-weight: 700;
+	padding: 0em;
+	text-decoration: none;
+}
+
+@media (max-width: 500px) { .about-me {
+	top: 20em;
+	}
+}
